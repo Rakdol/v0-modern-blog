@@ -8,9 +8,10 @@ import type { PostMeta } from '@/lib/posts'
 interface PostCardProps {
   post: PostMeta
   index?: number
+  priority?: boolean
 }
 
-export function PostCard({ post, index = 0 }: PostCardProps) {
+export function PostCard({ post, index = 0, priority = false }: PostCardProps) {
   return (
     <article
       className="animate-fade-up glass-card glow-hover group flex flex-col overflow-hidden rounded-xl"
@@ -22,6 +23,7 @@ export function PostCard({ post, index = 0 }: PostCardProps) {
             src={post.coverImage}
             alt={post.title}
             fill
+            priority={priority}
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />

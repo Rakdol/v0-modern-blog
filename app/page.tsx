@@ -22,7 +22,7 @@ export default function HomePage() {
 
           <div className="grid gap-8 md:grid-cols-2">
             {posts.map((post, i) => (
-              <PostCard key={post.slug} post={post} index={i} />
+              <PostCard key={post.slug} post={post} index={i} priority={i === 0} />
             ))}
           </div>
 
